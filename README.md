@@ -1,5 +1,5 @@
-# bead_bond
-Bead Bond
+
+# Bead Bond
 
 Bead Bond is a creative, child-focused web application designed for children aged 5 years and over to explore the joy of beading. Families and schools can book free creative sessions where children create jewellery using colourful beads in a safe and supportive environment.
 
@@ -154,7 +154,7 @@ As a mobile user, I want the site to work well on my phone.
    Donate button visible on all pages
    Donation form with preset and custom amounts
 
-Wireframes
+## Wireframes
 
 Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts to ensure responsiveness and usability.
 
@@ -182,6 +182,6 @@ Code Institute tutorials and mentor guidance
 
 ## Acknowledgements
 
-To every child who needs a little spark, a little joy, and a little confidence —
-this project is for you. 💙✨
+To every child who needs a little spark, a little joy, and a little confidence 
+this project is for you.
 
