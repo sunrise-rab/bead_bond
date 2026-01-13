@@ -97,31 +97,31 @@ Bead Bond also promotes family involvement, school wellbeing, and community supp
 
 ## User Stories
 1. Parent / Guardian
-   As a parent, I want to book a creative session for my child so we can spend quality time together.
-   As a parent, I want to add more than one child so all my children can attend.
-   As a parent, I want to choose bead types and accessories so my child enjoys the activity.
-   As a parent, I want to give photo consent so I feel comfortable about media use.
-   As a parent, I want to read safety information so I know my child will be supervised properly.
+   - As a parent, I want to book a creative session for my child so we can spend quality time together.
+   - As a parent, I want to add more than one child so all my children can attend.
+   - As a parent, I want to choose bead types and accessories so my child enjoys the activity.
+   - As a parent, I want to give photo consent so I feel comfortable about media use.
+   - As a parent, I want to read safety information so I know my child will be supervised properly.
 
 2. Child
-   As a child, I want to see colourful beads so I can choose my favourites.
-   As a child, I want to make jewellery and take it home proudly.
-   As a child, I want to create with others so I can make friends.
+   - As a child, I want to see colourful beads so I can choose my favourites.
+   - As a child, I want to make jewellery and take it home proudly.
+   - As a child, I want to create with others so I can make friends.
 
 3. School Staff / Wellbeing Officer
-   As a school wellbeing officer, I want to book sessions for groups of students.
-   As a staff member, I want to review safety policies to ensure safeguarding compliance.
+   - As a school wellbeing officer, I want to book sessions for groups of students.
+   - As a staff member, I want to review safety policies to ensure safeguarding compliance.
 
 4. Donor / Supporter
-   As a donor, I want to understand the mission so I trust where my money goes.
-   As a donor, I want an easy way to donate.
+   - As a donor, I want to understand the mission so I trust where my money goes.
+   - As a donor, I want an easy way to donate.
 
 5. Safeguarding / Local Authority
-   As a safeguarding officer, I want to review safety and consent policies.
+   - As a safeguarding officer, I want to review safety and consent policies.
 
 6. First-Time Visitor
-   As a new visitor, I want to navigate the site easily.
-   As a mobile user, I want the site to work well on my phone.
+   - As a new visitor, I want to navigate the site easily.
+   - As a mobile user, I want the site to work well on my phone.
 
 ## Features
 1. Home Page
