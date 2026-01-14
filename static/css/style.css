@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+
+    --bb-purple-dark: #4C3D7B;   /* headers */
+    --bb-text-main: #3A3A3A;     /* Main body text */
+    --bb-lavender: #B8A9E3;      /* Primary brand colour */
+    --bb-blush: #F6B1C3;         /* Secondary brand colour*/
+    --bb-mint: #A8E6CF;          /* success */
+    --bb-bg-main: #FAF9F7;       /* Main background */
+    --bb-bg-card: #FFF1E6;       /* Cards */
+    --bb-white: #FFFFFF;         /* Pure white */
+    --bb-border-soft: rgba(58, 58, 58, 0.12);
+    --bb-shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.08);
+    --bb-heading-font:'Baloo 2', cursive;
+    --bb-main-font: 'Poppins', sans-serif;
+  }
+
+body{
+    font-family: var(--bb-font-body);
+  }
+  h1, h2, h3, h4, h5{
+    font-family: var(--bb-font-heading);
+  }
+    
+  /* Top navbar */
+  .main-navbar{
+    background-color: var(--bb-purple-dark);
+    padding: 0.75rem 0;
+  }
+  
+  .main-navbar .nav-link,
+  .main-navbar .navbar-brand{
+    color:var(--bb-white)
+  }
+  
+  .main-navbar .nav-link:hover,
+  .main-navbar .nav-link:focus{
+    opacity: 0.9;
+    text-decoration: none;
+    font-size: 1.rem;
+    color: var(--bb-lavender);
+    font-weight: 700;
+
+  }
+  
+  
+  .sub-navbar{
+    background: var(--bb-lavender);
+    border-bottom: 1px solid var(--bb-border-soft);
+    padding: 0.2rem 0;
+    font-family: var(--bb-font-body);
+  }
+  
+  .sub-link{
+    color: var(--bb-purple-dark);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+.sub-link:hover,
+.sub-link:focus{
+    text-decoration: none;
+    transform: translateY(-1px);
+    color: var(--bb-blush);
+  }
+  
+  /* Donate button */
+  .donate-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    font-family: var(--bb-font-body);
+    font-weight: 700;
+    text-decoration: none;
+    background: var(--bb-blush);
+    color: var(--bb-text-main);
+    box-shadow: var(--bb-shadow-soft);
+    transition: all 0.2s ease;
+  }
+  
+  .donate-link i{
+    color: var(--bb-purple-dark);
+    font-size: 1rem;
+  }
+  .donate-link:hover,
+  .donate-link:focus{
+    background: var(--bb-purple-dark);
+    color: var(--bb-white);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  
+  .donate-link:hover i,
+  .donate-link:focus i{
+    color: var(--bb-white);
+    text-decoration: none;
+  }
+  
+  
+  /* Base logo style */
+.beadbond-logo{
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: .4px;
+    text-decoration: none;
+    color: var(--bb-white);
+  }
+  
+  /* First & middle B */
+  .bb-b{
+    color: var(--bb-lavender); 
+    font-weight: 900;
+    position: relative;
+  }
+  
+  /* Middle & last D*/
+  .bb-d{
+    color: var(--bb-blush);
+    font-weight: 900;
+    position: relative;
+  }
+  
+  /* Subtle “bead” feel */
+  .bb-b::after,
+  .bb-d::after{
+    content: "";
+    position: absolute;
+    bottom: -0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: .35em;
+    height: .35em;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.35;
+  }
+  
