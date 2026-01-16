@@ -5,135 +5,130 @@
 <html lang="en">
 
 <head>
+  {% load static %}
 
-    {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock %}
+  {% block meta %}
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% endblock %}
 
-    {% block extra_meta %}
-    {% endblock %}
+  {% block extra_meta %}{% endblock %}
 
-    {% block corejs %}
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"></script>
-    {% endblock %}
-      
-    {% block corecss %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    {% endblock %}
+  {% block corecss %}
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  {% endblock %}
 
-    {% block extra_css %}
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=9">
-    {% endblock %}
+  {% block extra_css %}
+  <!-- Custom CSS AFTER Bootstrap -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}?v=10">
+  {% endblock %}
 
-    {% block extra_js %}
-    <!--Font Awesome Kit-->
-    <script src="https://kit.fontawesome.com/5cfdac059a.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    {% endblock %}
+  {% block corejs %}
+  <!-- jQuery + Popper + Bootstrap 4 JS  -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-    <title>beadbond {% block extra_title %}{% endblock %}</title>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/5cfdac059a.js" crossorigin="anonymous"></script>
+  {% endblock %}
+
+  {% block extra_js %}{% endblock %}
+
+  <title>beadbond {% block extra_title %}{% endblock %}</title>
 </head>
 
+
 <body>
-    <header class="site-header">
-        <!-- Logo left  main nav right -->
-        <nav class="navbar navbar-expand-lg main-navbar">
-          <div class="container">
-            <a class="navbar-brand beadbond-logo" href="/">
-                <span class="bb-b">B</span>ea<span class="bb-b">d</span><span class="bb-d">B</span>on<span class="bb-d">d</span>
-              </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-      
-            <!-- Main nav -->
-            <div class="collapse navbar-collapse" id="mainNav">
-              <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Booking</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-              </ul>
-            </div>
-      
-          </div>
-        </nav>
-        <div class="sub-navbar">
-            <div class="container d-flex align-items-center">
-          
-              <!-- Auth links -->
-              <div class="auth-links d-flex gap-3">
-                {% if user.is_authenticated %}
-                  <a class="sub-link" href="{% url 'account_logout' %}">Logout</a>
-                {% else %}
-                  <a class="sub-link" href="{% url 'account_login' %}">Login</a>
-                  <a class="sub-link" href="{% url 'account_signup' %}">Register</a>
-                {% endif %}
-              </div>
-          
-              <!-- Donate -->
-              <div class="ms-auto">
-                <a class="donate-link" href="">
-                    <i class="fa-solid fa-hand-holding-heart"></i>
-                    <span>Donate</span>
-                  </a>
-                  
-              </div>
-          
-            </div>
-          </div>
-          
-       
-      </header>
-      
+  <header class="site-header">
 
-    {% if messages %}
-    <div class="message-container"></div>
-    {% endif %}
+    <!-- TOP NAVBAR: Logo left, main nav right -->
+    <nav class="navbar navbar-expand-lg navbar-dark bb-navbar">
+      <div class="container">
 
-    {% block page_header %}
-    <div class="sub-navbar">
-        <div class="container d-flex ">
-      
-          <!-- LEFT: Auth links -->
-          <div class="auth-links d-flex gap-3">
-            {% if user.is_authenticated %}
-              <a class="sub-link" href="{% url 'account_logout' %}">Logout</a>
+        <a class="navbar-brand beadbond-logo" href="/">
+          <span class="bb-b">B</span>ea<span class="bb-b">d</span><span class="bb-d">B</span>on<span
+            class="bb-d">d</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ml-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Booking</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- SECOND NAVBAR: My Account + Donate aligned right -->
+    <div class="bb-utilitybar">
+      <div class="container d-flex align-items-center justify-content-end">
+
+        <!-- My Account -->
+        <div class="dropdown bb-account mr-3">
+          <a class="nav-link dropdown-toggle bb-account-link" href="#" id="user-options" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa-solid fa-user"></i>
+            <span class="d-none d-sm-inline">My Account</span>
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="user-options">
+            {% if request.user.is_authenticated %}
+            <a href="" class="dropdown-item">My Profile</a>
+            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
             {% else %}
-              <a class="sub-link" href="{% url 'account_login' %}">Login</a>
-              <a class="sub-link" href="{% url 'account_signup' %}">Register</a>
+            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
             {% endif %}
           </div>
-      
-          <!-- RIGHT: Donate -->
-          <div class="ms-auto">
-            <a class="btn btn-donate" href="{% url 'donate' %}">Donate</a>
-          </div>
-      
         </div>
+
+        <!-- Donate RIGHT -->
+        <a class="donate-link" href="">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+          <span>Donate</span>
+        </a>
+
       </div>
-      
-    {% endblock %}
+    </div>
 
-    {% block content %}
-    {% endblock %}
+  </header>
 
-    {% block postloadjs %}
-    {% endblock %}
+
+  <!-- Feedback messages-->
+  {% if messages %}
+  <div class="message-container"></div>
+  {% endif %}
+
+
+
+  {% block content %}
+  {% endblock %}
+
+  {% block postloadjs %}
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  {% endblock %}
 
 </body>
 
