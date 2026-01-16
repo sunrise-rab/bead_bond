@@ -1,1 +1,1 @@
-web: gunicorn bead_bond.wsgi
+web: gunicorn bead_bond.wsgi:application
