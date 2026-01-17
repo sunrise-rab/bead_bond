@@ -122,6 +122,38 @@ Bead Bond also promotes family involvement, school wellbeing, and community supp
 6. First-Time Visitor
    - As a new visitor, I want to navigate the site easily.
    - As a mobile user, I want the site to work well on my phone.
+## Design
+
+### Colour palette
+The colour palette for Bead Bond was created using ![Coolors.co](https://coolors.co/), focusing on soft, playful colours that reflect creativity and warmth while remaining easy to read. Contrast Grid was used to check colour combinations and ensure sufficient contrast between text and backgrounds for accessibility.
+![Coolors.co](docs/bb-color-palette.png)
+
+## UML diagram
+A UML Use Case Diagram was created to visualise how users and admins interact with the Bead Bond system. This helped identify core features such as bookings, donations, and content management before development began.
+![UML diagram](docs/bb-uml-diagram.png)
+
+## Database diagram
+A database diagram was designed to plan the relational structure of the application, showing how users, bookings, beads, accessories, and events are connected. This ensured clear relationships between tables and supported data integrity and CRUD functionality.
+![Database diagram](docs/bb-database-diagram.png)
+
+## Wireframes
+Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts to ensure responsiveness and usability.
+
+1. Home
+  ![Home](docs/wireframes/home.png)
+2. Events
+  ![Events](docs/wireframes/events.png)
+3. Parent/Guardian Booking   
+  ![Parent Booking](docs/wireframes/parent-booking.png)
+4.School Booking
+  ![School Booking](docs/wireframes/school-booking.png)
+5. Contact
+   ![Contact](docs/wireframes/Contact.png)
+7. Health & Safety
+   ![Health and Safety](docs/wireframes/health-safety.png)
+7- Donation
+   ![Donations](docs/wireframes/donation.png)
+
 
 ## Features
 1. Home Page
@@ -154,22 +186,8 @@ Bead Bond also promotes family involvement, school wellbeing, and community supp
    Donate button visible on all pages
    Donation form with preset and custom amounts
 
-## Wireframes
-
-Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts to ensure responsiveness and usability.
-
-Home
-Catalog
-Events
-Booking
-Parent/Guardian Booking
-School Booking
-Contact
-Health & Safety
-Donation
 
 
-## Design
 
 ## Technologies Used
 
