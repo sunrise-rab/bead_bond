@@ -1,0 +1,63 @@
+[
+    {
+      "model": "home.accessory",
+      "pk": null,
+      "fields": {
+        "name": "Elastic Thread",
+        "description": "Stretchy elastic thread used for making simple bracelets that fit comfortably.",
+        "image": "accessories/elastic-thread.jpg",
+        "is_included": true
+      }
+    },
+    {
+      "model": "home.accessory",
+      "pk": null,
+      "fields": {
+        "name": "Beading String",
+        "description": "Smooth beading string for necklaces and bracelets where elastic is not required.",
+        "image": "accessories/beading-string.jpg",
+        "is_included": true
+      }
+    },
+    {
+      "model": "home.accessory",
+      "pk": null,
+      "fields": {
+        "name": "Clasps",
+        "description": "Simple clasps for fastening necklaces and bracelets securely.",
+        "image": "accessories/clasps.jpg",
+        "is_included": true
+      }
+    },
+    {
+      "model": "home.accessory",
+      "pk": null,
+      "fields": {
+        "name": "Jump Rings",
+        "description": "Small metal rings used to connect charms and clasps to jewellery pieces.",
+        "image": "accessories/jump-rings.jpg",
+        "is_included": true
+      }
+    },
+    {
+      "model": "home.accessory",
+      "pk": null,
+      "fields": {
+        "name": "Charms",
+        "description": "Decorative charms that can be added to bracelets and necklaces for extra style.",
+        "image": "accessories/charms.jpg",
+        "is_included": true
+      }
+    },
+    {
+      "model": "home.accessory",
+      "pk": null,
+      "fields": {
+        "name": "Beading Needle",
+        "description": "A thin needle to help thread small beads easily and neatly.",
+        "image": "accessories/beading-needle.jpg",
+        "is_included": true
+      }
+    }
+  ]
+  

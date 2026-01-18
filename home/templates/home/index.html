@@ -63,29 +63,60 @@
   <section class="container my-5">
     <div class="d-flex align-items-end justify-content-between mb-3">
       <div>
-        <h2 class="bb-section-title mb-1">Featured Items</h2>
+        <h1 class="bb-section-title mb-1">Featured Items</h1>
         <p class="mb-0 text-muted">A sneak peek of what’s included in our sessions.</p>
       </div>
       <a class="sub-link" href="">See all</a>
     </div>
-  
-    <div class="row g-4">
-      {% for item in items %}
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card bb-card h-100">
-            <div class="card-body">
-              <h5 class="card-title">{{ item.name }}</h5>
-              <p class="card-text">{{ item.description|truncatechars:70 }}</p>
-              {% if item.included_in_session %}
-                <span class="badge bb-badge">Included</span>
-              {% else %}
-                <span class="badge bb-badge-alt">Optional</span>
+    <div class="container py-5">
+
+        <h2>Beads</h2>
+        <div class="row">
+          {% for bead in bead_types %}
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              {% if bead.image %}
+                <img class="card-img-top" src="{{ bead.image.url }}" alt="{{ bead.name }}">
               {% endif %}
+              <div class="card-body">
+                <h5 class="card-title">{{ bead.name }}</h5>
+                <p class="card-text">{{ bead.description }}</p>
+                {% if bead.is_included %}
+                  <span class="badge badge-success">Included</span>
+                {% else %}
+                  <span class="badge badge-secondary">Not included</span>
+                {% endif %}
+              </div>
             </div>
           </div>
+          {% endfor %}
         </div>
-      {% endfor %}
-    </div>
+      
+        <h2 class="mt-5">Accessories</h2>
+        <div class="row">
+          {% for item in accessories %}
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              {% if item.image %}
+                <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.name }}">
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+                {% if item.is_included %}
+                  <span class="badge badge-success">Included</span>
+                {% else %}
+                  <span class="badge badge-secondary">Not included</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      
+      </div>
+  
+   
   </section>
     
 

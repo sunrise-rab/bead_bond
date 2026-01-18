@@ -1,0 +1,102 @@
+[
+    {
+      "model": "home.beadtype",
+      "pk": null,
+      "fields": {
+        "name": "Amber Gold Glass Seed Beads",
+        "description": "Small glass seed beads in a warm amber-gold tone, great for detailed bracelets and patterns.",
+        "image": "beads-accessories/amber-gold-glass-seed-bead.png",
+        "is_included": true,
+        "colour": "Amber Gold"
+      }
+    },
+    {
+      "model": "home.beadtype",
+      "pk": null,
+      "fields": {
+        "name": "Colourful Acrylic Beads",
+        "description": "Bright acrylic beads in a colourful mix, perfect for children’s jewellery and fun designs.",
+        "image": "beads-accessories/colourful-acrylic-beads.png",
+        "is_included": true,
+        "colour": "Multicolour"
+      }
+    },
+    {
+      "model": "home.beadtype",
+      "pk": null,
+      "fields": {
+        "name": "Crackle Crystal Beads",
+        "description": "Crystal-style beads with a crackle effect that catches light and adds sparkle to creations.",
+        "image": "beads-accessories/crackle-cristal.png",
+        "is_included": true,
+        "colour": "Clear"
+      }
+    },
+    {
+      "model": "home.beadtype",
+      "pk": null,
+      "fields": {
+        "name": "Cream Rocaille Beads",
+        "description": "Classic rocaille beads in a soft cream tone for elegant, neutral bracelets and necklaces.",
+        "image": "beads-accessories/cream-rocaille-beads.png",
+        "is_included": true,
+        "colour": "Cream"
+      }
+    },
+    {
+      "model": "home.beadtype",
+      "pk": null,
+      "fields": {
+        "name": "Letter Beads",
+        "description": "Alphabet beads for personalising jewellery with names, initials, and messages.",
+        "image": "beads-accessories/letter-beads.png",
+        "is_included": true,
+        "colour": "White"
+      }
+    },
+    {
+      "model": "home.beadtype",
+      "pk": null,
+      "fields": {
+        "name": "Pink Glass Seed Beads",
+        "description": "Vibrant pink seed beads ideal for fun, colourful designs and friendship bracelets.",
+        "image": "beads-accessories/pink-glass-seed-beads.png",
+        "is_included": true,
+        "colour": "Pink"
+      }
+    },
+    {
+      "model": "home.beadtype",
+      "pk": null,
+      "fields": {
+        "name": "Rainbow Mix Pony Beads",
+        "description": "Large pony beads in a rainbow mix, easy to thread and great for younger children.",
+        "image": "beads-accessories/rainbow-mix-plastic-pony-beads.png",
+        "is_included": true,
+        "colour": "Rainbow"
+      }
+    },
+    {
+      "model": "home.beadtype",
+      "pk": null,
+      "fields": {
+        "name": "Wooden Beads",
+        "description": "Natural wooden beads for earthy, simple designs and eco-friendly creations.",
+        "image": "beads-accessories/wooden-beads.jpg",
+        "is_included": true,
+        "colour": "Natural"
+      }
+    },
+    {
+      "model": "home.beadtype",
+      "pk": null,
+      "fields": {
+        "name": "Yellow Frosted Seed Beads",
+        "description": "Frosted yellow seed beads with a soft matte finish for bright, cheerful designs.",
+        "image": "beads-accessories/yellow-frosted-seed-beads.png",
+        "is_included": true,
+        "colour": "Yellow"
+      }
+    }
+  ]
+  

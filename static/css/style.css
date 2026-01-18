@@ -29,6 +29,9 @@ body{
 h1, h2, h3, h4, h5{
   font-family: var(--bb-heading-font);
 }
+h1{
+  color: var(--bb-purple-dark);
+}
 
 /* Top navbar */
 .bb-navbar{
@@ -214,6 +217,19 @@ h1, h2, h3, h4, h5{
   opacity: 1;
   transform: scale(1.2);
 }
+
+/* cards */
+
+.card{
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+.card-img-top {
+  height: 220px !important;        
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
 
 
 
