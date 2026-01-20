@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5">
+
+  <div class="bb-page-header mb-4">
+    <h1 class="bb-page-title">My Bookings</h1>
+    <p class="bb-page-subtitle">View and manage your bookings.</p>
+  </div>
+
+  {% if bookings %}
+    <div class="row">
+      {% for booking in bookings %}
+        <div class="col-12 col-lg-6 mb-4">
+          <div class="bb-booking-card h-100">
+            <div class="bb-booking-card-body">
+              <div class="d-flex justify-content-between align-items-start gap-3">
+                <div>
+                  <h5 class="bb-booking-child mb-1">Booking on {{ booking.booking_date }}</h5>
+                  <div class="small text-muted">
+                    Photo consent: {% if booking.photo_consent %}Yes{% else %}No{% endif %}
+                  </div>
+                </div>
+
+                <a href="{% url 'bookings:edit_booking' booking.id %}"
+                class="bb-mini-btn js-edit-booking"
+                data-url="{% url 'bookings:edit_booking' booking.id %}">
+               Edit
+             </a>
+              </div>
+
+              <hr>
+
+              <h6 class="mb-2">Children</h6>
+              <ul class="bb-booking-list">
+                {% for child in booking.children.all %}
+                  <li><strong>{{ child.name }}</strong> — Age {{ child.age }}</li>
+                {% empty %}
+                  <li class="text-muted">No children added.</li>
+                {% endfor %}
+              </ul>
+
+              {% if booking.notes %}
+                <div class="mt-3">
+                  <h6 class="mb-1">Notes</h6>
+                  <p class="mb-0">{{ booking.notes }}</p>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="{% url 'bookings:create_booking' %}" class="donate-link">Make another booking</a>
+    </div>
+
+  {% else %}
+    <div class="bb-empty-state">
+      <h3>No bookings yet</h3>
+      <p>You haven’t made any bookings yet. Press below to create one.</p>
+      <a href="{% url 'bookings:create_booking' %}" class="donate-link">Make a Booking</a>
+    </div>
+  {% endif %}
+  <div class="modal fade" id="editBookingModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bb-modal">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Booking</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        <div class="modal-body bb-modal-body" id="editBookingModalBody">
+          <div class="text-muted">Loading…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+
+  <h1>Edit Booking</h1>
+
+  <div id="edit-form-wrapper">
+    <form method="POST">
+      {% csrf_token %}
+      {{ booking_form.booking_date.label_tag }}
+      {{ booking_form.booking_date }}
+
+      <div class="form-check">
+        {{ booking_form.photo_consent }}
+        {{ booking_form.photo_consent.label_tag }}
+      </div>
+
+      {{ booking_form.notes.label_tag }}
+      {{ booking_form.notes }}
+
+      {{ child_formset.management_form }}
+      {% for form in child_formset %}
+      {{ form.name.label_tag }}
+      {{ form.name }}
+
+      {{ form.age.label_tag }}
+      {{ form.age }}
+
+      <div class="form-check">
+        {{ form.DELETE }}
+        <label>Delete</label>
+      </div>
+
+      {{ form.id }}
+
+      {% endfor %}
+      <button type="submit" class="donate-link">Save Changes</button>
+    </form>
+  </div>
+
+</div>
+{% endblock %}

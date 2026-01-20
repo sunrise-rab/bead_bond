@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5">
+
+  <div class="bb-page-header mb-4">
+    <h1 class="bb-page-title">Create a Booking</h1>
+    <p class="bb-page-subtitle">Add one or more children to the same booking.</p>
+  </div>
+
+  <div class="bb-form-wrapper">
+
+    <form method="POST" novalidate>
+      {% csrf_token %}
+
+      <h4 class="bb-form-title">Booking Details</h4>
+
+      <div class="bb-form-group">
+        <label>Booking date</label>
+        {{ booking_form.booking_date }}
+        {% for error in booking_form.booking_date.errors %}
+          <div class="bb-error">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      <div class="bb-form-check">
+        {{ booking_form.photo_consent }}
+        <label class="ms-2">I give permission for photos to be taken</label>
+      </div>
+
+      <div class="bb-form-group">
+        <label>Notes (optional)</label>
+        {{ booking_form.notes }}
+      </div>
+
+      <hr class="my-4">
+
+      <div class="d-flex align-items-center justify-content-between gap-3">
+        <h4 class="bb-form-title mb-0">Children</h4>
+        <button type="button" class="bb-mini-btn" id="add-child-btn">+ Add child</button>
+      </div>
+
+      {{ child_formset.management_form }}
+
+      <div id="children-forms">
+        {% for form in child_formset.forms %}
+          <div class="bb-child-row">
+            <div class="row g-3 align-items-end">
+              <div class="col-12 col-md-6">
+                <label>Child name</label>
+                {{ form.name }}
+                {% for error in form.name.errors %}<div class="bb-error">{{ error }}</div>{% endfor %}
+              </div>
+
+              <div class="col-8 col-md-3">
+                <label>Age</label>
+                {{ form.age }}
+                {% for error in form.age.errors %}<div class="bb-error">{{ error }}</div>{% endfor %}
+              </div>
+
+              <div class="col-4 col-md-3 text-end">
+                {% if form.instance.pk %}
+                  <div class="bb-delete-wrap">
+                    <label class="bb-delete-label">Delete</label>
+                    {{ form.DELETE }}
+                  </div>
+                {% else %}
+                  <button type="button" class="bb-mini-btn bb-remove-btn">Remove</button>
+                {% endif %}
+              </div>
+            </div>
+
+            {{ form.id }}
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Empty form template for JS cloning -->
+      <div id="empty-form" class="d-none">
+        <div class="bb-child-row">
+          <div class="row g-3 align-items-end">
+            <div class="col-12 col-md-6">
+              <label>Child name</label>
+              {{ child_formset.empty_form.name }}
+            </div>
+            <div class="col-8 col-md-3">
+              <label>Age</label>
+              {{ child_formset.empty_form.age }}
+            </div>
+            <div class="col-4 col-md-3 text-end">
+              <button type="button" class="bb-mini-btn bb-remove-btn">Remove</button>
+            </div>
+          </div>
+          {{ child_formset.empty_form.id }}
+        </div>
+      </div>
+
+      <div class="bb-form-actions mt-4">
+        <button type="submit" class="donate-link">Submit Booking</button>
+        <a href="{% url 'bookings:my_bookings' %}" class="bb-link-cancel">Cancel</a>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    const addBtn = document.getElementById("add-child-btn");
+    const formsContainer = document.getElementById("children-forms");
+    const emptyFormTemplate = document.getElementById("empty-form").innerHTML;
+    const totalFormsInput = document.getElementById("id_children-TOTAL_FORMS") || document.getElementById("id_bookingchild_set-TOTAL_FORMS");
+
+    const totalFormsId = totalFormsInput ? totalFormsInput.id : null;
+    const prefix = totalFormsId ? totalFormsId.replace("id_", "").replace("-TOTAL_FORMS", "") : "bookingchild_set";
+
+    function updateRemoveButtons() {
+      formsContainer.querySelectorAll(".bb-remove-btn").forEach(btn => {
+        btn.onclick = function () {
+          const row = btn.closest(".bb-child-row");
+          row.remove();
+        };
+      });
+    }
+
+    addBtn.addEventListener("click", function () {
+      const total = parseInt(totalFormsInput.value, 10);
+
+      let html = emptyFormTemplate.replaceAll("__prefix__", total);
+      // Also replace the prefix if needed (in case your empty_form uses a different prefix)
+      html = html.replaceAll("bookingchild_set", prefix);
+
+      formsContainer.insertAdjacentHTML("beforeend", html);
+      totalFormsInput.value = total + 1;
+
+      updateRemoveButtons();
+    });
+
+    updateRemoveButtons();
+  })();
+</script>
+{% endblock %}
