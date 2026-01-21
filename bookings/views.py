@@ -100,7 +100,10 @@ def edit_booking(request, pk):
     return render(
         request,
         "bookings/edit_booking.html",
-        {"booking_form": booking_form, "child_formset": child_formset, "booking": booking}
+        {"booking_form": booking_form,
+         "child_formset": child_formset, 
+         "booking": booking
+         }
     )
 
 

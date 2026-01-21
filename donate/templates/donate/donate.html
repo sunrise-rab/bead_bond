@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="container my-5">
+  <div class="bb-donate-wrap">
+    <div class="bb-donate-card">
+      <h1 class="bb-donate-title">Support Bead Bond</h1>
+      <p class="bb-donate-lead">
+        Your donation helps us run more free creative sessions for children and families.
+      </p>
+
+      <form id="donateForm" method="post" action="{% url 'donate:create_checkout_session' %}">
+        {% csrf_token %}
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="bb-label">Name (optional)</label>
+            <input class="bb-input" type="text" name="name" placeholder="Rabia">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="bb-label">Email (optional)</label>
+            <input class="bb-input" type="email" name="email" placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="bb-label">Choose amount</label>
+          <div class="bb-amounts">
+            <button type="button" class="bb-amount-btn" data-amount="5">£5</button>
+            <button type="button" class="bb-amount-btn" data-amount="10">£10</button>
+            <button type="button" class="bb-amount-btn active" data-amount="20">£20</button>
+            <button type="button" class="bb-amount-btn" data-amount="50">£50</button>
+          </div>
+          <input id="amountInput" class="bb-input mt-2" type="number" name="amount" min="1" step="1" value="20">
+          <small class="text-muted">You can type a custom amount too.</small>
+        </div>
+
+        <div class="mb-3">
+          <label class="bb-label">Message (optional)</label>
+          <textarea class="bb-input" name="message" rows="4" placeholder="A short message…"></textarea>
+        </div>
+
+        <button id="donateBtn" type="submit" class="donate-link w-100 justify-content-center">
+          Donate securely
+        </button>
+
+        <p class="bb-donate-mini mt-3 mb-0">
+          Payments are processed securely via Stripe (test mode for your project).
+        </p>
+      </form>
+    </div>
+
+    <div class="bb-donate-side">
+      <div class="bb-side-card">
+        <h3 class="bb-side-title">Where your money goes</h3>
+        <ul class="bb-side-list">
+          <li>Beads, strings & accessories</li>
+          <li>Supervised creative sessions</li>
+          <li>Resources for schools & wellbeing groups</li>
+        </ul>
+        <h3 class="bb-side-title">Our promise</h3>
+        <p class="mb-0">
+            We follow safeguarding and photo consent policies to keep children safe and supported.
+          </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  (function(){
+    var stripe = Stripe("{{ stripe_public_key }}");
+
+    var amountInput = document.getElementById("amountInput");
+    var buttons = document.querySelectorAll(".bb-amount-btn");
+
+    buttons.forEach(function(btn){
+      btn.addEventListener("click", function(){
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        amountInput.value = btn.getAttribute("data-amount");
+      });
+    });
+
+    document.getElementById("donateForm").addEventListener("submit", async function(e){
+      e.preventDefault();
+
+      var form = e.target;
+      var formData = new FormData(form);
+
+      var res = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {"X-Requested-With":"XMLHttpRequest"}
+      });
+
+      var data = await res.json();
+      if (data.error) {
+        alert(data.error);
+        return;
+      }
+
+      await stripe.redirectToCheckout({ sessionId: data.id });
+    });
+  })();
+</script>
+{% endblock %}

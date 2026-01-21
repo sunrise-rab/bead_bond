@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="container my-5">
+  <div class="bb-donate-card text-center">
+    <h1 class="bb-donate-title">Donation cancelled</h1>
+    <p class="mb-4">No payment was taken. You can try again anytime.</p>
+    <a class="donate-link" href="{% url 'donate:donate' %}">Return to Donate</a>
+  </div>
+</section>
+{% endblock %}
