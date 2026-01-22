@@ -14,10 +14,10 @@ from pathlib import Path
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
-    
+
 STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY")
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
-
+STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

@@ -1,6 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
 from django.http import JsonResponse
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
@@ -42,7 +43,7 @@ def create_checkout_session(request):
         paid=False,
     )
 
-    domain = request.build_absolute_uri("/")[:-1]  # removes trailing slash
+    domain = request.build_absolute_uri("/")[:-1]  
     success_url = domain + "/donate/success/?session_id={CHECKOUT_SESSION_ID}"
     cancel_url = domain + "/donate/cancel/"
 
@@ -71,7 +72,7 @@ def create_checkout_session(request):
 
 def donate_success(request):
     """
-    Marks donation as paid using the Checkout session status (simple approach).
+    Marks donation as paid using the Checkout session status.
     """
     session_id = request.GET.get("session_id")
     if not session_id:
@@ -88,3 +89,34 @@ def donate_success(request):
 
 def donate_cancel(request):
     return render(request, "donate/cancel.html")
+
+@csrf_exempt
+def stripe_webhook(request):
+    payload = request.body
+    sig_header = request.META.get("HTTP_STRIPE_SIGNATURE", "")
+    endpoint_secret = settings.STRIPE_WEBHOOK_SECRET
+
+    if not endpoint_secret:
+        return HttpResponse(status=400)
+
+    try:
+        event = stripe.Webhook.construct_event(
+            payload=payload,
+            sig_header=sig_header,
+            secret=endpoint_secret,
+        )
+    except ValueError:
+        # Invalid payload
+        return HttpResponse(status=400)
+    except stripe.error.SignatureVerificationError:
+        # Invalid signature
+        return HttpResponse(status=400)
+
+    # Handle successful payment from Stripe checkout
+    if event["type"] == "checkout.session.completed":
+        session = event["data"]["object"]
+        session_id = session.get("id")
+
+        Donation.objects.filter(stripe_session_id=session_id).update(paid=True)
+
+    return HttpResponse(status=200)
