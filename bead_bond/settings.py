@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'home',
     'bookings',
     "donate",
+    "contact",
 ]
 
 MIDDLEWARE = [
