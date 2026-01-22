@@ -52,7 +52,7 @@
 <body class="d-flex flex-column min-vh-100">
   <header class="site-header">
 
-    <!-- TOP NAVBAR: Logo left, main nav right -->
+    <!-- Logo left, main nav right -->
     <nav class="navbar navbar-expand-lg navbar-dark bb-navbar">
       <div class="container">
 
@@ -71,14 +71,14 @@
             <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'bookings:my_bookings' %}">Booking</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact:contact' %}">Contact Us</a></li>
           </ul>
         </div>
 
       </div>
     </nav>
 
-    <!-- SECOND NAVBAR: My Account + Donate aligned right -->
+    <!--My Account + Donate  -->
     <div class="bb-utilitybar">
       <div class="container d-flex align-items-center justify-content-end">
 
@@ -153,8 +153,8 @@
         <!-- Contact / Info -->
         <div class="col-md-4 mb-3">
           <h5 class="footer-title">Get in Touch</h5>
-          <p class="footer-text mb-1">📧 info@beadbond.co.uk</p>
-          <p class="footer-text mb-1">📍 Birmingham, UK</p>
+          <p class="footer-text mb-1">info@beadbond.co.uk</p>
+          <p class="footer-text mb-1">Birmingham, UK</p>
         </div>
 
       </div>

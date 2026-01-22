@@ -13,10 +13,10 @@ from .models import Donation
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
-
 def donate_page(request):
-    return render(request, "donate/donate.html", {"stripe_public_key": settings.STRIPE_PUBLIC_KEY})
-
+    return render(request,
+     "donate/donate.html", 
+     {"stripe_public_key": settings.STRIPE_PUBLIC_KEY})
 
 @require_POST
 def create_checkout_session(request):
