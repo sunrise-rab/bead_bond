@@ -415,7 +415,7 @@ h1{ color:var(--bb-purple-dark); }
   margin-bottom:12px;
   box-shadow:var(--bb-shadow-soft);
   border-left:5px solid var(--bb-mint);
-  /*animation:slideIn 1.5s ease;*/
+  animation:slideIn 15s ease;
 }
 .toast-body{
   font-weight:600;
