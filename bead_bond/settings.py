@@ -113,12 +113,8 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 WSGI_APPLICATION = 'bead_bond.wsgi.application'
 ACCOUNT_EMAIL_VERIFICATION = "none" 
-ACCOUNT_EMAIL_REQUIRED = True  
-X_FRAME_OPTIONS = "SAMEORIGIN"  # default safe
-if DEBUG:
-    X_FRAME_OPTIONS = "ALLOWALL"
-
-
+ACCOUNT_EMAIL_REQUIRED = True         
+X_FRAME_OPTIONS ="ALLOWALL"
 
 
 # Database
