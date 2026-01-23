@@ -127,9 +127,7 @@
       const total = parseInt(totalFormsInput.value, 10);
 
       let html = emptyFormTemplate.replaceAll("__prefix__", total);
-      // Also replace the prefix if needed (in case your empty_form uses a different prefix)
       html = html.replaceAll("bookingchild_set", prefix);
-
       formsContainer.insertAdjacentHTML("beforeend", html);
       totalFormsInput.value = total + 1;
 
