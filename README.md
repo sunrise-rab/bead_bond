@@ -139,40 +139,33 @@ A database diagram was designed to plan the relational structure of the applicat
 ## Wireframes
 Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts to ensure responsiveness and usability.
 
-1. Home
-  ![Home](docs/wireframes/home.png)
-2. Events
-  ![Events](docs/wireframes/events.png)
-3. Parent/Guardian Booking   
-  ![Parent Booking](docs/wireframes/parent-booking.png)
-4.School Booking
-  ![School Booking](docs/wireframes/school-booking.png)
-5. Contact
-   ![Contact](docs/wireframes/contact.png)
-7. Health & Safety
-   ![Health and Safety](docs/wireframes/health-safety.png)
-7- Donation
-   ![Donations](docs/wireframes/donation.png)
+- [Home](docs/wireframes/home.png)
+- [Events](docs/wireframes/events.png)
+- [Parent Booking](docs/wireframes/parent-booking.png)
+- [School Booking](docs/wireframes/school-booking.png)
+- [Contact](docs/wireframes/contact.png)
+- [Health and Safety](docs/wireframes/health-safety.png)
+- [Donations](docs/wireframes/donation.png)
 
 
 ## Features
 
 | Feature                           | Description                                                                                                                                                                  | Screenshot           |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
-| **User Authentication**           | Users can sign up, log in, and log out securely using Django Allauth. Certain features such as booking workshops and making donations are only available to logged-in users. |  ![Login / Signup page](docs/screenshoots/login.png)  |
-| **Workshop Booking System**       | Logged-in users can create bookings for jewellery workshops, select dates, and manage their bookings from a dedicated bookings page.                                         | ![Bookings](docs/screenshoots/booking.png) |
-| **Multiple Children per Booking** | Parents can add more than one child to a single booking, making it easier for families to book workshops together.                                                 | ![Create booking](docs/screenshoots/create-booking.png)    |
-| **Edit Booking (Modal)**          | Users can edit an existing booking using a modal popup without leaving the bookings page, improving user experience.                                                         |  ![Edit booking](docs/screenshoots/edit-booking.png)    |
+| **User Authentication**           | Users can sign up, log in, and log out securely using Django Allauth. Certain features such as booking workshops and making donations are only available to logged-in users. |  ![Login / Signup pag](docs/screenshots/login.png)  |
+| **Workshop Booking System**       | Logged-in users can create bookings for jewellery workshops, select dates, and manage their bookings from a dedicated bookings page.                                         | ![Bookings](docs/screenshots/booking.png) |
+| **Multiple Children per Booking** | Parents can add more than one child to a single booking, making it easier for families to book workshops together.                                                 | ![Create booking](docs/screenshots/create-booking.png)    |
+| **Edit Booking (Modal)**          | Users can edit an existing booking using a modal popup without leaving the bookings page, improving user experience.                                                         |  ![Edit booking](docs/screenshots/edit-booking.png)    |
 | **Cancel/Delete Booking**                | Users can cancel a booking they no longer need, helping keep booking data accurate and up to date.                                                                           |  ![Delete Booking](docs/screenshoots/delete-booking.png)      |
-| **Donation System**               | Users can support Bead Bond through secure online donations powered by Stripe Checkout.                                                                                      | ![Donation](docs/screenshoots/donate.png)          |
-| **Contact Us Form**               | Visitors can contact Bead Bond using a contact form to ask questions or request more information about workshops.                                                            | ![Contact Us](docs/screenshoots/contact.png)        |
-| **Health & Safety Page**          | A dedicated page outlining safety procedures, safeguarding policies, and child wellbeing commitments.                                                                        |![Health & Safety](docs/screenshoots/contact.png) |
-| **Home**        | Carousel display what we do and all the included and not included products . | ![Home](docs/screenshoots/home.png) |                                              
+| **Donation System**               | Users can support Bead Bond through secure online donations powered by Stripe Checkout.                                                                                      | ![Donation](docs/screenshots/donate.png)          |
+| **Contact Us Form**               | Visitors can contact Bead Bond using a contact form to ask questions or request more information about workshops.                                                            | ![Contact Us](docs/screenshots/contact.png)        |
+| **Health & Safety Page**          | A dedicated page outlining safety procedures, safeguarding policies, and child wellbeing commitments.                                                                        |![Health & Safety](docs/screenshots/contact.png) |
+| **Home**        | Carousel display what we do and all the included and not included products . | ![Home](docs/screenshots/home.png)  ![Home](docs/screenshots/home-beads.png) |                                              
 
 
 ## Bugs
 
-| Bug                                                               | Cause                                                                         | Fix / Solution                                                                                                    |
+| Bug                                                               | Cause                                                                         | Fix / Solution                                                                                                     |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | Booking saved without any children attached                       | Form allowed submission even if no child formset was completed.               | Added validation to require at least one child in the formset before saving the booking.                          |
 | Deleted child still appeared after editing booking                | Formset was saved but deleted objects were not committed.                     | Called `formset.save()` after setting `formset.instance = booking`.                                               |
@@ -183,7 +176,27 @@ Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts t
 | Multiple children added but displayed as one                      | Template loop incorrectly referenced the booking instead of related children. | Corrected template logic to loop over `booking.children.all()`.                                                   |
 
 
+## User Stories testing
 
+| User Story                                                                                | Acceptance Criteria (What “Done” Looks Like)                                             | Tested? | Result  | Notes / Evidence                                                     |
+| ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------- | ------- | -------------------------------------------------------------------- |
+| As a visitor, I can view the Home page so I understand what Bead Bond offers.             | Home loads without errors; hero/intro content visible; navigation works.                 |       | Pass    | ![Screenshot](docs/testing/home.png)                                |
+| As a visitor, I can navigate the site using the navbar so I can find pages easily.        | Navbar links go to correct pages; active links visible; works on mobile.                 |       | Pass    | ![Screenshot](docs/testing/navbar_mobile.png)                        |
+| As a user, I can register an account so I can access booking features.                    | Sign up form submits; account created; redirected/confirmation shown.                    |      | Pass    | ![Screenshot](docs/testing/signup.png)                                |
+| As a user, I can log in so I can manage my bookings. | Login works with valid credentials; redirects to expected page; session persists.        |     | Pass    | ![Screenshot](docs/testing/login.png) |
+| As a user, I cannot access all “My Bookings” when I am logged in.                                 | My bookings lists all the past and future bookings|      | Pass    | ![Screenshot](docs/testing/my_booking.png)                       |
+| As a parent/guardian, I can create a booking so I can book an activity.| Booking form saves; success message displayed; booking appears in My Bookings.|       | Pass    | ![Screenshot](docs/testing/create_booking.png)                        |
+| As a parent/guardian, I can edit a booking so I can update details.                       | Edit opens (modal/page); fields pre-filled; saving updates booking correctly.            |       | Pass    | ![Screenshot](docs/testing/edit_booking_modal.png)                    |
+| As a parent/guardian, I can cancel/delete a booking so it no longer shows in My Bookings. | Cancel action removes booking; confirmation shown; booking disappears from list.         |      | Pass| [screenshot](docs/testing/delete_booking.png)|
+| As a user, I can see a clear message when I have no bookings yet. “No bookings yet” message shows + button to create booking.                              |      | Pass    | ![Screenshot](docs/testing/empty_booking.png)                          |
+| As a user, I receive feedback messages after actions (create/edit/delete).| Success/error toasts appear; readable; closeable or lasts long enough.|       | Pass    | ![Screenshot](docs/testing/toast_message.png) |
+| As a donor, I can open the Donate page to understand how donations help.                  | Donate page loads; form visible; clear explanation provided.                             |      | Pass    | ![Screenshot](docs/testing/donate.png)                          |
+| As a donor, I can submit a donation and be redirected to Stripe Checkout.| Clicking donate creates session; redirects to Stripe; no console/server errors. |      | Pass| ![screenshot](docs/testing/stripe_checkout.png)                     |
+| As the site owner, I receive webhook events so donations can be confirmed.                | Webhook endpoint returns 200; events seen in logs; handles `checkout.session.completed`. |       | Pass    | ![Screenshot](docs/testing/webhook_event.png)                       |
+| As a visitor, I can contact Bead Bond so I can ask questions.                             | Contact form submits; validation works; success message shown.                           |     | Pass | ![Screenshot](docs/testing/contact_submit.png)              |
+| As a visitor, I can view the Health & Safety page to feel confident about events.         | Page loads; content clearly structured; accessible from footer/nav.                      |     | Pass | ![Screenshot](docs/testing/health_safety.png)                           |
+| As a user, I can log out to keep my account secure.                                       | Logout works; session ends; redirected to home/login.                                    |     | Pass    | ![Screenshot](docs/testing/logout.png)                                |
+| As a user, forms show validation messages so I can correct mistakes.                      | Required fields show errors; submission blocked until valid.                             |       | Pass    | ![Screenshot](docs/testing/form_errors.png)                           |
 
 
 
