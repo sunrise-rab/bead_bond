@@ -186,6 +186,32 @@ Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts t
    Donate button visible on all pages
    Donation form with preset and custom amounts
 
+## Bugs
+
+| Bug                                                               | Cause                                                                         | Fix / Solution                                                                                                    |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Booking saved without any children attached                       | Form allowed submission even if no child formset was completed.               | Added validation to require at least one child in the formset before saving the booking.                          |
+| Deleted child still appeared after editing booking                | Formset was saved but deleted objects were not committed.                     | Called `formset.save()` after setting `formset.instance = booking`.                                               |
+| Cancel button removed booking immediately without confirmation    | No user confirmation step before deletion.                                    | Added a confirmation prompt before submitting the cancel action.                                          |
+| Photo consent defaulted to False even when checkbox ticked        | Checkbox value not correctly bound in the form.                               | Ensured the checkbox field was included in `fields` and properly saved in `form.save(commit=False)`.              |
+| Stripe donation recorded even if payment failed                   | Donation object was created before Stripe confirmation.                       | Created donation records only after receiving a successful `checkout.session.completed` webhook event.            |
+| Donation success page shown even when user closed Stripe checkout | Frontend redirected without verifying Stripe status.                          | Used Stripe success/cancel URLs properly and relied on webhook for final confirmation.                                           |
+| Multiple children added but displayed as one                      | Template loop incorrectly referenced the booking instead of related children. | Corrected template logic to loop over `booking.children.all()`.                                                   |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
