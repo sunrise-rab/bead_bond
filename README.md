@@ -156,35 +156,19 @@ Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts t
 
 
 ## Features
-1. Home Page
-   Welcome message
-   Inspiration story
-   Benefits of beading
 
-3. Catalog Page
-   Beads and accessories displayed using cards
-   Images, names, and short descriptions
+| Feature                           | Description                                                                                                                                                                  | Screenshot           |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| **User Authentication**           | Users can sign up, log in, and log out securely using Django Allauth. Certain features such as booking workshops and making donations are only available to logged-in users. |  ![Login / Signup page](docs/screenshoot/login.png)  |
+| **Workshop Booking System**       | Logged-in users can create bookings for jewellery workshops, select dates, and manage their bookings from a dedicated bookings page.                                         | ![Bookings](docs/screenshoot/booking.png) |
+| **Multiple Children per Booking** | Parents can add more than one child to a single booking, making it easier for families to book workshops together.                                                 | ![Create booking](docs/screenshoot/create-booking.png)    |
+| **Edit Booking (Modal)**          | Users can edit an existing booking using a modal popup without leaving the bookings page, improving user experience.                                                         |  ![Edit booking](docs/screenshoot/edit-booking.png)    |
+| **Cancel/Delete Booking**                | Users can cancel a booking they no longer need, helping keep booking data accurate and up to date.                                                                           |  ![Delete Booking](docs/screenshoot/delete-booking.png)      |
+| **Donation System**               | Users can support Bead Bond through secure online donations powered by Stripe Checkout.                                                                                      | ![Donation](docs/screenshoot/donate.png)          |
+| **Contact Us Form**               | Visitors can contact Bead Bond using a contact form to ask questions or request more information about workshops.                                                            | ![Contact Us](docs/screenshoot/contact.png)        |
+| **Health & Safety Page**          | A dedicated page outlining safety procedures, safeguarding policies, and child wellbeing commitments.                                                                        |![Health & Safety](docs/screenshoot/contact.png) |
+| **Home**        | Carousel display what we do and all the included and not included products . | ![Home](docs/screenshoot/home.png) |                                              
 
-5. Events Page
-   Upcoming and past events
-   Event details and booking links
-
-6. Booking Page
-   Parent/Guardian and School booking options
-   Separate booking forms
-   Photo consent option
-
-7. Contact Page
-   Enquiry form
-   Google Map for location
-
-8. Health & Safety Page
-   Supervision, hygiene, allergy awareness
-   Photo consent and emergency procedures
-
-9. Donate Feature
-   Donate button visible on all pages
-   Donation form with preset and custom amounts
 
 ## Bugs
 
