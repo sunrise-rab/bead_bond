@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, { once: true });
   }
-
+   // Edit booking
   document.querySelectorAll(".js-edit-booking").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -50,3 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// Toast close button
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("toast-close")) {
+    e.target.closest(".toast")?.remove();
+  }
+});
+

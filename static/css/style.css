@@ -423,10 +423,27 @@ h1{ color:var(--bb-purple-dark); }
   color:var(--bb-text-main);
   padding:.9rem 1.1rem;
 }
-@keyframes slideIn{
-  from{ transform:translateX(16px); opacity:0; }
-  to{ transform:translateX(0); opacity:1; }
+.bb-toast{
+  position: relative;
+  background: #e9f7ef;
+  border-left: 4px solid #28a745;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
 }
+
+.toast-close{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+
 /* ---------------------------
   Donate specifics
 ----------------------------*/
