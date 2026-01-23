@@ -65,7 +65,6 @@ h1{ color:var(--bb-purple-dark); }
   position:relative;
   z-index:1030;
 }
-
 .bb-account-link{
   color:var(--bb-purple-dark);
   font-weight:700;
@@ -79,7 +78,6 @@ h1{ color:var(--bb-purple-dark); }
 .account-trigger{ color:var(--bb-text-main); text-decoration:none; }
 .account-trigger i{ font-size:1.05rem; color:var(--bb-mint); }
 .account-trigger p{ font-size:.85rem; font-weight:700; margin:0; }
-
 .dropdown-menu{ border-radius:1rem; padding:.5rem; }
 .dropdown-item{ border-radius:.75rem; font-weight:600; color:var(--bb-text-main); }
 .dropdown-item:hover,
@@ -95,7 +93,7 @@ h1{ color:var(--bb-purple-dark); }
   font-family:var(--bb-main-font);
   font-weight:700;
   text-decoration:none;
-  background:var(--bb-blush);
+  background-color:var(--bb-blush);
   color:var(--bb-text-main);
   box-shadow:var(--bb-shadow-soft);
   transition:all .2s ease;
@@ -135,6 +133,41 @@ h1{ color:var(--bb-purple-dark); }
   background:currentColor;
   opacity:.35;
 }
+/* Signup / Allauth forms */
+.signup p {
+  margin-bottom: 1.2rem;
+}
+.signup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: .35rem;
+}
+.signup input {
+  width: 100%;
+  padding: .55rem .75rem;
+  border-radius: .75rem;
+  border: 1px solid var(--bb-border-soft);
+  background: var(--bb-bg-main);
+  font-family: var(--bb-main-font);
+}
+.signup input[type="checkbox"] {
+  width: auto;
+}
+.signup input:focus {
+  border-color: rgba(76,61,123,.4);
+  box-shadow: 0 0 0 .2rem rgba(184,169,227,.35);
+  outline: none;
+}
+
+.signup .errorlist {
+  margin-top: .35rem;
+  color: #b00020;
+  font-size: .8rem;
+  font-weight: 600;
+  list-style: none;
+  padding: 0;
+}
+
 /* ---------------------------
   Home carousel + cards
 ----------------------------*/
@@ -365,7 +398,6 @@ h1{ color:var(--bb-purple-dark); }
   border-top-left-radius:1.25rem;
   border-top-right-radius:1.25rem;
 }
-
 /* ---------------------------
   Toast Messages
 ----------------------------*/
@@ -377,28 +409,24 @@ h1{ color:var(--bb-purple-dark); }
   max-width:360px;
   pointer-events:none;
 }
-
 .toast{
   background:var(--bb-white);
   border-radius:14px;
   margin-bottom:12px;
   box-shadow:var(--bb-shadow-soft);
   border-left:5px solid var(--bb-mint);
-  animation:slideIn 1.5s ease;
+  /*animation:slideIn 1.5s ease;*/
 }
-
 .toast-body{
   font-weight:600;
   font-size:.95rem;
   color:var(--bb-text-main);
   padding:.9rem 1.1rem;
 }
-
 @keyframes slideIn{
   from{ transform:translateX(16px); opacity:0; }
   to{ transform:translateX(0); opacity:1; }
 }
-
 /* ---------------------------
   Donate specifics
 ----------------------------*/

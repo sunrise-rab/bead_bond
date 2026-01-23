@@ -15,9 +15,12 @@
 <!-- Carousel section-->
 <div  id="beadbondCarousel" class="carousel slide bb-carousel" data-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-target="#beadbondCarousel" data-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-target="#beadbondCarousel" data-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-target="#beadbondCarousel" data-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-target="#beadbondCarousel" data-slide-to="0" 
+      class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-target="#beadbondCarousel" data-slide-to="1" 
+      aria-label="Slide 2"></button>
+      <button type="button" data-target="#beadbondCarousel" data-slide-to="2" 
+      aria-label="Slide 3"></button>
     </div>
   
     <div class="carousel-inner">
@@ -28,7 +31,7 @@
         <div class="bb-slide p-4 p-md-5">
           <h1 class="bb-title">Bead Bond</h1>
           <p class="bb-lead mb-3">Free creative sessions for children aged 5+ to build confidence, friendships, and joy.</p>
-          <a class="donate-link" href="">Book a Session</a>
+          <a class="donate-link" href="{% url 'bookings:my_bookings' %}">Book a Session</a>
         </div>
       </div>
       <div class="carousel-item">
@@ -38,7 +41,6 @@
         <div class="bb-slide p-4 p-md-5">
           <h2 class="bb-title">Explore Beads & Accessories</h2>
           <p class="bb-lead mb-3">Browse colourful bead types and accessories included in our sessions.</p>
-          <a class="donate-link" href="">View Catalog</a>
         </div>
       </div>
       <div class="carousel-item">
@@ -48,7 +50,7 @@
         <div class="bb-slide p-4 p-md-5">
           <h2 class="bb-title">Support the Mission</h2>
           <p class="bb-lead mb-3">Donations help us run more free sessions and reach more children.</p>
-          <a class="donate-link" href="">
+          <a class="donate-link" href="{% url 'donate:donate' %}">
             <i class="fa-solid fa-hand-holding-heart"></i> <span>Donate</span>
           </a>
         </div>
@@ -66,7 +68,7 @@
         <h1 class="bb-section-title mb-1">Featured Items</h1>
         <p class="mb-0 text-muted">A sneak peek of what’s included in our sessions.</p>
       </div>
-      <a class="sub-link" href="">See all</a>
+     
     </div>
     <div class="container py-5">
 
@@ -112,12 +114,8 @@
             </div>
           </div>
           {% endfor %}
-        </div>
-      
-      </div>
-  
-   
-  </section>
-    
+        </div> 
+      </div>  
+    </section>   
 
 {% endblock %}

@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'bookings',
     "donate",
     "contact",
+    "safety",
 ]
 
 MIDDLEWARE = [
@@ -64,7 +65,6 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -111,6 +111,9 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 WSGI_APPLICATION = 'bead_bond.wsgi.application'
+ACCOUNT_EMAIL_VERIFICATION = "none" 
+ACCOUNT_EMAIL_REQUIRED = True         
+
 
 
 # Database

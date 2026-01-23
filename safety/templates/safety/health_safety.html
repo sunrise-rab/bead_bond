@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block head_title %}Health & Safety{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="bb-form-wrapper">
+    <h1 class="bb-page-title">Health & Safety</h1>
+    <p class="bb-page-subtitle">
+      We want every BeadBond session to be safe, calm, and enjoyable. Please read the guidance below before attending.
+    </p>
+
+    <hr>
+
+    <h3>Supervision</h3>
+    <ul class="bb-side-list">
+      <li>Children must be supervised by a parent/guardian unless the session is a school-led booking.</li>
+      <li>Staff do not provide 1:1 care. Please inform us of any support needs in advance.</li>
+    </ul>
+
+    <h3>Small Parts & Choking Risk</h3>
+    <ul class="bb-side-list">
+      <li>Beads and accessories are small items and can be a choking hazard.</li>
+      <li>We recommend sessions for children aged 5+ (or younger only with very close adult supervision).</li>
+    </ul>
+
+    <h3>Allergies & Sensitivities</h3>
+    <ul class="bb-side-list">
+      <li>Please tell us about allergies (e.g., latex, metals, fragrance sensitivity) before the session.</li>
+      <li>We avoid harsh chemicals and use child-friendly materials where possible.</li>
+    </ul>
+
+    <h3>Hygiene</h3>
+    <ul class="bb-side-list">
+      <li>Hands should be washed or sanitised at the start of the activity.</li>
+      <li>Work surfaces and tools are cleaned between sessions.</li>
+      <li>Please do not attend if your child is unwell (fever, vomiting, contagious infection).</li>
+    </ul>
+
+    <h3>Behaviour & Respect</h3>
+    <ul class="bb-side-list">
+      <li>We encourage kindness, sharing, and calm behaviour.</li>
+      <li>Bullying, unsafe behaviour, or damage to equipment may result in the session being ended.</li>
+    </ul>
+
+    <h3>Photography</h3>
+    <ul class="bb-side-list">
+      <li>Photos are only taken if you give consent at booking.</li>
+      <li>You can withdraw consent at any time during the session.</li>
+    </ul>
+
+    <h3>Emergency & First Aid</h3>
+    <ul class="bb-side-list">
+      <li>Basic first-aid supplies are available.</li>
+      <li>In an emergency we will contact the parent/guardian and, if needed, emergency services.</li>
+    </ul>
+
+    <hr>
+
+    <p class="mb-0">
+      Questions? Contact us via the <a href="{% url 'contact:contact' %}">Contact Us</a> page.
+    </p>
+  </div>
+</div>
+{% endblock %}
