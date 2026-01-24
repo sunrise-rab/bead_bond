@@ -5,6 +5,28 @@ Bead Bond is a creative, child-focused web application designed for children age
 
 The aim of Bead Bond is to help children grow in confidence, build friendships, and enjoy meaningful bonding time through creativity. The platform also supports community involvement through donation-based funding.
 
+
+## Content
+- [Bead Bond](#bead-bond)
+  * [Rationale](#rationale)
+  * [User Goals](#user-goals)
+  * [User Stories](#user-stories)
+  * [Design](#design)
+    + [Colour palette](#colour-palette)
+  * [UML diagram](#uml-diagram)
+  * [Database diagram](#database-diagram)
+  * [Wireframes](#wireframes)
+  * [Features](#features)
+  * [Bugs](#bugs)
+  * [User Stories testing](#user-stories-testing)
+  * [Technologies Used](#technologies-used)
+  * [Deployment (Heroku)](#deployment--heroku-)
+  * [Credits](#credits)
+  * [Acknowledgements](#acknowledgements)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 ## Rationale
 
 Bead Bond was inspired by a young girl very close to me. Beading helped her become more confident, creative, and socially connected. She would spend hours making bracelets and sharing them with other girls, building friendships through creativity.
@@ -94,6 +116,7 @@ Bead Bond also promotes family involvement, school wellbeing, and community supp
   - Promotes bookings for families and schools
   - Showcases impact through events
   - Encourages community support via donations
+[Back to contents](#contents)
 
 ## User Stories
 1. Parent / Guardian
@@ -122,6 +145,9 @@ Bead Bond also promotes family involvement, school wellbeing, and community supp
 6. First-Time Visitor
    - As a new visitor, I want to navigate the site easily.
    - As a mobile user, I want the site to work well on my phone.
+  
+     [Back to contents](#contents)
+     
 ## Design
 
 ### Colour palette
@@ -162,6 +188,7 @@ Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts t
 | **Health & Safety Page**          | A dedicated page outlining safety procedures, safeguarding policies, and child wellbeing commitments.                                                                        |![Health & Safety](docs/screenshots/contact.png) |
 | **Home**        | Carousel display what we do and all the included and not included products . | ![Home](docs/screenshots/home.png)  ![Home](docs/screenshots/home-beads.png) |                                              
 
+[Back to contents](#contents)
 
 ## Bugs
 
@@ -217,6 +244,9 @@ Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts t
 - [WAVE Accessibility Tool](https://wave.webaim.org/ "WAVE Accessibility Tool")
 - [Color Contrast Accessibility Validator](https://color.a11y.com/ "Color Contrast Accessibility Validator")
 
+  [Back to contents](#contents)
+
+
 ## Deployment (Heroku)
 
 - Create a Heroku app
@@ -237,6 +267,10 @@ Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts t
 
 Images from Pexels, Unsplash, and personal resources
 Code Institute tutorials and mentor guidance
+[ChatGBT](https://chatgpt.com/)
+[Very Academy](//www.youtube.com/watch?v=oZwyA9lUwRk)
+[Dennis Ivy – Django Forms & CRUD](https://www.youtube.com/watch?v=PtQiiknWUcI)
+
 
 ## Acknowledgements
 
