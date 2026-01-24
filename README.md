@@ -266,11 +266,11 @@ Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts t
 
 ## Credits
 
-Images from Pexels, Unsplash, and personal resources
-Code Institute tutorials and mentor guidance
-[ChatGBT](https://chatgpt.com/)
-[Very Academy](//www.youtube.com/watch?v=oZwyA9lUwRk)
-[Dennis Ivy – Django Forms & CRUD](https://www.youtube.com/watch?v=PtQiiknWUcI)
+- Images from Pexels, Unsplash, and personal resources
+- Code Institute tutorials and mentor guidance
+- [ChatGBT](https://chatgpt.com/)
+- [Very Academy](//www.youtube.com/watch?v=oZwyA9lUwRk)
+- [Dennis Ivy – Django Forms & CRUD](https://www.youtube.com/watch?v=PtQiiknWUcI)
 
 
 ## Acknowledgements
