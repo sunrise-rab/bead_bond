@@ -252,10 +252,8 @@ Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts t
 #### HTML
 
 I have used [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML"). I tested the html file. It displays no errors.
-![W3C HTML Validator](docs/testing/html-checker-home.html")
-![W3C HTML Validator](docs/testing/html-checker-contact.html")
-
-
+![W3C HTML Validator](docs/testing/html-checker-home.png")
+![W3C HTML Validator](docs/testing/html-checker-contact.png")
 
 ### CSS
 
