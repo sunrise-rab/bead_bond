@@ -50,10 +50,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-// Toast close button
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("toast-close")) {
-    e.target.closest(".toast")?.remove();
-  }
-});
+
 

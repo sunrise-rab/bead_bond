@@ -32,7 +32,8 @@ body{
 
 main{ flex:1; }
 
-h1,h2,h3,h4,h5{ font-family:var(--bb-heading-font); }
+h1,h2,h3,h4,h5{ 
+  font-family:var(--bb-heading-font); }
 h1{ color:var(--bb-purple-dark); }
 
 /* ---------------------------
@@ -45,7 +46,8 @@ h1{ color:var(--bb-purple-dark); }
 }
 
 .bb-navbar .navbar-brand,
-.bb-navbar .nav-link{ color:var(--bb-white)!important; }
+.bb-navbar .nav-link{ 
+  color:var(--bb-white)!important; }
 
 .bb-navbar .nav-link:hover,
 .bb-navbar .nav-link:focus{
@@ -55,8 +57,10 @@ h1{ color:var(--bb-purple-dark); }
   text-decoration:none;
 }
 
-.navbar-brand{ font-size:2rem!important; }
-.bb-navbar .navbar-toggler{ border-color:rgba(255,255,255,.35); }
+.navbar-brand{ 
+  font-size:2rem!important; }
+.bb-navbar .navbar-toggler{
+   border-color:rgba(255,255,255,.35); }
 
 .bb-utilitybar{
   background:var(--bb-bg-main);
@@ -73,15 +77,29 @@ h1{ color:var(--bb-purple-dark); }
   gap:.5rem;
   text-decoration:none;
 }
-.bb-account-link:hover{ color:var(--bb-purple-dark); text-decoration:none; }
+.bb-account-link:hover{ 
+  color:var(--bb-purple-dark); 
+  text-decoration:none; }
 
-.account-trigger{ color:var(--bb-text-main); text-decoration:none; }
-.account-trigger i{ font-size:1.05rem; color:var(--bb-mint); }
-.account-trigger p{ font-size:.85rem; font-weight:700; margin:0; }
-.dropdown-menu{ border-radius:1rem; padding:.5rem; }
-.dropdown-item{ border-radius:.75rem; font-weight:600; color:var(--bb-text-main); }
+.account-trigger{ 
+  color:var(--bb-text-main); 
+  text-decoration:none; }
+.account-trigger i{
+   font-size:1.05rem; 
+   color:var(--bb-mint); }
+.account-trigger p{ 
+  font-size:.85rem; 
+  font-weight:700; margin:0; }
+.dropdown-menu{ 
+  border-radius:1rem; 
+  padding:.5rem; }
+.dropdown-item{
+   border-radius:.75rem; 
+   font-weight:600; 
+   color:var(--bb-text-main); }
 .dropdown-item:hover,
-.dropdown-item:focus{ background:var(--bb-bg-card); }
+.dropdown-item:focus{ 
+  background:var(--bb-bg-card); }
 
 /* Donate button */
 .donate-link{
@@ -98,7 +116,9 @@ h1{ color:var(--bb-purple-dark); }
   box-shadow:var(--bb-shadow-soft);
   transition:all .2s ease;
 }
-.donate-link i{ color:var(--bb-purple-dark); font-size:1rem; }
+.donate-link i{ 
+  color:var(--bb-purple-dark); 
+  font-size:1rem; }
 .donate-link:hover,
 .donate-link:focus{
   background:var(--bb-purple-dark);
@@ -117,9 +137,13 @@ h1{ color:var(--bb-purple-dark); }
   text-decoration:none;
   color:var(--bb-white);
 }
-.bb-b,.bb-d{ font-weight:900; position:relative; }
-.bb-b{ color:var(--bb-lavender); }
-.bb-d{ color:var(--bb-blush); }
+.bb-b,.bb-d{ font-weight:900;
+   position:relative; }
+.bb-b{ 
+  color:var(--bb-lavender);
+ }
+.bb-d{ 
+  color:var(--bb-blush); }
 .bb-b::after,
 .bb-d::after{
   content:"";
@@ -171,7 +195,8 @@ h1{ color:var(--bb-purple-dark); }
 /* ---------------------------
   Home carousel + cards
 ----------------------------*/
-.bb-carousel img{ height:480px; object-fit:cover; }
+.bb-carousel img{ 
+  height:480px; object-fit:cover; }
 
 .carousel-indicators button{
   width:10px;
@@ -197,25 +222,50 @@ h1{ color:var(--bb-purple-dark); }
 /* ---------------------------
   Footer
 ----------------------------*/
-.footer{ background:var(--bb-purple-dark); color:var(--bb-bg-card); }
-.footer-title{ font-weight:600; margin-bottom:10px; }
-.footer-text{ font-size:.9rem; color:var(--bb-bg-card); }
-.footer-links li{ margin-bottom:6px; }
+.footer{ 
+  background:var(--bb-purple-dark); 
+  color:var(--bb-bg-card); 
+}
+.footer-title{ 
+  font-weight:600; 
+  margin-bottom:10px; }
+.footer-text{ 
+  font-size:.9rem; 
+  color:var(--bb-bg-card); 
+}
+.footer-links li{ 
+  margin-bottom:6px;
+ }
 .footer-links a{
   color:var(--bb-bg-card);
   text-decoration:none;
   font-size:.9rem;
 }
-.footer-links a:hover{ text-decoration:underline; color:var(--bb-blush); }
-.footer hr{ border-color:rgba(255,255,255,.2); }
-.footer-bottom{ font-size:.85rem; color:var(--bb-bg-card); }
+.footer-links a:hover{ 
+  text-decoration:underline; 
+  color:var(--bb-blush); 
+}
+.footer hr{
+   border-color:rgba(255,255,255,.2); 
+  }
+.footer-bottom{ 
+  font-size:.85rem; 
+  color:var(--bb-bg-card);
+ }
 
 /* ---------------------------
   Booking pages (headers + cards)
 ----------------------------*/
-.bb-page-header{ text-align:center; max-width:720px; margin:0 auto; }
-.bb-page-title{ color:var(--bb-purple-dark); }
-.bb-page-subtitle{ color:var(--bb-text-main); opacity:.8; }
+.bb-page-header{ 
+  text-align:center; 
+  max-width:720px; 
+  margin:0 auto; }
+.bb-page-title{ 
+  color:var(--bb-purple-dark);
+ }
+.bb-page-subtitle{ 
+  color:var(--bb-text-main); 
+  opacity:.8; }
 
 .bb-empty-state{
   max-width:680px;
@@ -260,7 +310,7 @@ h1{ color:var(--bb-purple-dark); }
 .bb-badge-muted{ background:var(--bb-border-soft); }
 
 /* ---------------------------
-  Shared form + page layouts (Donate / Contact / Booking forms)
+  Donate + cards
 ----------------------------*/
 .bb-donate-wrap,
 .bb-contact-wrap{
@@ -398,50 +448,22 @@ h1{ color:var(--bb-purple-dark); }
   border-top-left-radius:1.25rem;
   border-top-right-radius:1.25rem;
 }
-/* ---------------------------
-  Toast Messages
-----------------------------*/
-.message-container{
-  position:fixed;
-  top:90px;
-  right:20px;
-  z-index:1080;
-  max-width:360px;
-  pointer-events:none;
+/* feedback messages*/
+.bb-messages{ 
+  position:sticky; 
+  top:80px; 
+  z-index:1080; }
+.bb-alert{ 
+  border-radius:14px; 
+  box-shadow:var(--bb-shadow-soft); 
+  border:1px solid var(--bb-border-soft);
+ }
+.bb-alert-close{ 
+  opacity:.8; 
 }
-.toast{
-  background:var(--bb-white);
-  border-radius:14px;
-  margin-bottom:12px;
-  box-shadow:var(--bb-shadow-soft);
-  border-left:5px solid var(--bb-mint);
-  animation:slideIn 15s ease;
-}
-.toast-body{
-  font-weight:600;
-  font-size:.95rem;
-  color:var(--bb-text-main);
-  padding:.9rem 1.1rem;
-}
-.bb-toast{
-  position: relative;
-  background: #e9f7ef;
-  border-left: 4px solid #28a745;
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.toast-close{
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  border: none;
-  background: transparent;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #333;
-}
+.bb-alert-close:hover{
+   opacity:1; 
+  }
 
 
 /* ---------------------------
@@ -478,8 +500,10 @@ h1{ color:var(--bb-purple-dark); }
   font-weight:800;
   margin-bottom:.5rem;
 }
-.bb-side-list{ margin:0; padding-left:1.1rem; }
-.bb-donate-mini{ font-size:.9rem; color:rgba(58,58,58,.75); }
+.bb-side-list{ 
+  margin:0; padding-left:1.1rem; }
+.bb-donate-mini{ 
+  font-size:.9rem; color:rgba(58,58,58,.75); }
 
 /* ---------------------------
   Media queries (grouped)
