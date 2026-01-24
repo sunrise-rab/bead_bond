@@ -6,7 +6,7 @@ Bead Bond is a creative, child-focused web application designed for children age
 The aim of Bead Bond is to help children grow in confidence, build friendships, and enjoy meaningful bonding time through creativity. The platform also supports community involvement through donation-based funding.
 
 
-## Content
+## Contents
 - [Bead Bond](#bead-bond)
   * [Rationale](#rationale)
   * [User Goals](#user-goals)
@@ -116,6 +116,7 @@ Bead Bond also promotes family involvement, school wellbeing, and community supp
   - Promotes bookings for families and schools
   - Showcases impact through events
   - Encourages community support via donations
+    
 [Back to contents](#contents)
 
 ## User Stories
