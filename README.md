@@ -247,6 +247,31 @@ Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts t
 
   [Back to contents](#contents)
 
+  ### Code Validation
+
+#### HTML
+
+I have used [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML"). I tested the html file. It displays no errors.
+![W3C HTML Validator](docs/testing/html-checker-home.html")
+![W3C HTML Validator](docs/testing/html-checker-contact.html")
+
+
+
+### CSS
+
+CSS code for the webpage was validated on [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS Validator"). It displays no errors
+
+![W3C CSS Validator](docs/testing/css-checker.png "W3C CSS Validator results")
+[
+
+### JavaScript
+
+JS code was validated on [JSHint](https://jshint.com/ "JSHint"). some warnings were identified and they have been fixed.
+![JS Validation Image](docs/jshint.png)
+
+[Back to contents](#contents)
+
+
 
 ## Deployment (Heroku)
 
