@@ -260,6 +260,7 @@ I have used [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML").
 CSS code for the webpage was validated on [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS Validator"). It displays no errors
 
 ![W3C CSS Validator](docs/testing/css-checker.png "W3C CSS Validator results")
+
 [
 
 ### JavaScript
