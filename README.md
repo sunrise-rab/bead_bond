@@ -177,44 +177,61 @@ Wireframes were created using Balsamiq for desktop, tablet, and mobile layouts t
 
 
 ## User Stories testing
-
-| User Story                                                                                | Acceptance Criteria (What “Done” Looks Like)                                             | Tested? | Result  | Notes / Evidence                                                     |
-| ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------- | ------- | -------------------------------------------------------------------- |
-| As a visitor, I can view the Home page so I understand what Bead Bond offers.             | Home loads without errors; hero/intro content visible; navigation works.                 |       | Pass    | ![Screenshot](docs/testing/home.png)                                |
-| As a visitor, I can navigate the site using the navbar so I can find pages easily.        | Navbar links go to correct pages; active links visible; works on mobile.                 |       | Pass    | ![Screenshot](docs/testing/navbar_mobile.png)                        |
-| As a user, I can register an account so I can access booking features.                    | Sign up form submits; account created; redirected/confirmation shown.                    |      | Pass    | ![Screenshot](docs/testing/signup.png)                                |
-| As a user, I can log in so I can manage my bookings. | Login works with valid credentials; redirects to expected page; session persists.        |     | Pass    | ![Screenshot](docs/testing/login.png) |
-| As a user, I cannot access all “My Bookings” when I am logged in.                                 | My bookings lists all the past and future bookings|      | Pass    | ![Screenshot](docs/testing/my_booking.png)                       |
-| As a parent/guardian, I can create a booking so I can book an activity.| Booking form saves; success message displayed; booking appears in My Bookings.|       | Pass    | ![Screenshot](docs/testing/create_booking.png)                        |
-| As a parent/guardian, I can edit a booking so I can update details.                       | Edit opens (modal/page); fields pre-filled; saving updates booking correctly.            |       | Pass    | ![Screenshot](docs/testing/edit_booking_modal.png)                    |
-| As a parent/guardian, I can cancel/delete a booking so it no longer shows in My Bookings. | Cancel action removes booking; confirmation shown; booking disappears from list.         |      | Pass| [screenshot](docs/testing/delete_booking.png)|
-| As a user, I can see a clear message when I have no bookings yet. “No bookings yet” message shows + button to create booking.                              |      | Pass    | ![Screenshot](docs/testing/empty_booking.png)                          |
-| As a user, I receive feedback messages after actions (create/edit/delete).| Success/error toasts appear; readable; closeable or lasts long enough.|       | Pass    | ![Screenshot](docs/testing/toast_message.png) |
-| As a donor, I can open the Donate page to understand how donations help.                  | Donate page loads; form visible; clear explanation provided.                             |      | Pass    | ![Screenshot](docs/testing/donate.png)                          |
-| As a donor, I can submit a donation and be redirected to Stripe Checkout.| Clicking donate creates session; redirects to Stripe; no console/server errors. |      | Pass| ![screenshot](docs/testing/stripe_checkout.png)                     |
-| As the site owner, I receive webhook events so donations can be confirmed.                | Webhook endpoint returns 200; events seen in logs; handles `checkout.session.completed`. |       | Pass    | ![Screenshot](docs/testing/webhook_event.png)                       |
-| As a visitor, I can contact Bead Bond so I can ask questions.                             | Contact form submits; validation works; success message shown.                           |     | Pass | ![Screenshot](docs/testing/contact_submit.png)              |
-| As a visitor, I can view the Health & Safety page to feel confident about events.         | Page loads; content clearly structured; accessible from footer/nav.                      |     | Pass | ![Screenshot](docs/testing/health_safety.png)                           |
-| As a user, I can log out to keep my account secure.                                       | Logout works; session ends; redirected to home/login.                                    |     | Pass    | ![Screenshot](docs/testing/logout.png)                                |
-| As a user, forms show validation messages so I can correct mistakes.                      | Required fields show errors; submission blocked until valid.                             |       | Pass    | ![Screenshot](docs/testing/form_errors.png)                           |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| User Story                                                                         | Acceptance Criteria (What “Done” Looks Like)                               | Tested | Evidence                                           |
+| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------ | -------------------------------------------------- |
+| As a visitor, I can view the Home page so I understand what Bead Bond offers.      | Home loads without errors; hero/intro content visible; navigation works.   | Pass   | ![Screenshot](docs/testing/home-bb.png)            |
+| As a visitor, I can navigate the site using the navbar so I can find pages easily. | Navbar links go to correct pages; active links visible; works on mobile.   | Pass   | ![Screenshot](docs/testing/navbar_mobile.png)      |
+| As a user, I can register an account so I can access booking features.             | Sign-up form submits; account created; confirmation or redirect shown.     | Pass   | ![Screenshot](docs/testing/register.png)           |
+| As a user, I can log in so I can manage my bookings.                               | Login works with valid credentials; redirects correctly; session persists. | Pass   | ![Screenshot](docs/testing/login.png)              |
+| As a user, I can access all “My Bookings” when logged in.                          | My Bookings page lists all past and future bookings.                       | Pass   | ![Screenshot](docs/testing/my_booking.png)         |
+| As a parent/guardian, I can create a booking so I can book an activity.            | Booking form saves; success message shown; booking appears in My Bookings. | Pass   | ![Screenshot](docs/testing/create_booking.png)     |
+| As a parent/guardian, I can edit a booking so I can update details.                | Edit opens; fields pre-filled; saving updates booking correctly.           | Pass   | ![Screenshot](docs/testing/edit_booking_modal.png) |
+| As a parent/guardian, I can cancel/delete a booking so it no longer shows.         | Booking removed after confirmation; success message shown.                 | Pass   | ![Screenshot](docs/testing/delete_booking.png)     |
+| As a user, I can see a message when I have no bookings yet.                        | “No bookings yet” message displayed with button to create booking.         | Pass   | ![Screenshot](docs/testing/empty_booking.png)      |
+| As a donor, I can open the Donate page to understand how donations help.           | Donate page loads; explanation and form are visible.                       | Pass   | ![Screenshot](docs/testing/donate.png)             |
+| As a donor, I can submit a donation and be redirected to Stripe Checkout.          | Clicking donate creates a session; redirects to Stripe Checkout.           | Pass   | ![Screenshot](docs/testing/stripe_checkout.png)    |
+| As the site owner, I receive webhook events so donations can be confirmed.         | Webhook endpoint returns 200; `checkout.session.completed` handled.        | Pass   | ![Screenshot](docs/testing/webhook_event.png)      |
+| As a visitor, I can contact Bead Bond to ask questions.                            | Contact form validates input; success message shown on submit.             | Pass   | ![Screenshot](docs/testing/contact_submit.png)     |
+| As a visitor, I can view the Health & Safety page to feel confident.               | Page loads; content clear; accessible via footer/navigation.               | Pass   | ![Screenshot](docs/testing/health_safety.png)      |
+| As a user, I can log out to keep my account secure.                                | Logout ends session; user redirected to home or login page.                | Pass   | ![Screenshot](docs/testing/sign_out.png)           |
 
 ## Technologies Used
 
-## Deployment
+- [HTML](https://developer.mozilla.org/en-US/docs/Glossary/HTML5 "HTML")
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS "CSS")
+- [JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JS")
+- [Google Fonts](https://fonts.google.com/ "Google Fonts")
+- [GitHub](https://github.com/ "GitHub")
+- [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq")
+- [Image Resize](https://squoosh.app/)
+- [Color Contrast](https://contrastgrid.com/)
+- [Stripe](https://stripe.com/gb)
+- [Python](https://www.python.org/)
+- [Colour Palette](https://coolors.co/)
+- [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
+- [JSHint](https://jshint.com/ "JSHint")
+- [TOC Generator](https://ecotrust-canada.github.io/markdown-toc/ "TOC Generator")
+- [Am I Responsive](https://ui.dev/amiresponsive "Am I responsive")
+- [Responsive Design Checker](https://responsivedesignchecker.com/ "Responsive Design Checker")
+- [WAVE Accessibility Tool](https://wave.webaim.org/ "WAVE Accessibility Tool")
+- [Color Contrast Accessibility Validator](https://color.a11y.com/ "Color Contrast Accessibility Validator")
+
+## Deployment (Heroku)
+
+- Create a Heroku app
+- In Heroku Dashboard → New → Create new app
+- Add a PostgreSQL database
+- In Resources → Add-ons → search Heroku Postgres → add it
+- Set Config Vars In Heroku → Settings → Reveal Config Vars, add: SECRET_KEY, DATABASE_URL (auto set by Postgres add-on), DEBUG = False, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET
+- Install production dependencies
+- Make sure these are in requirements.txt: gunicorn, whitenoise, psycopg2-binary, stripe, django-allaut
+- Add a Procfile
+- In the project root: web: gunicorn bead_bond.wsgi
+- Collect static files
+- Ensure in settings.py you have: STATIC_ROOT set, Whitenoise enabled in MIDDLEWARE, Push to Heroku, Connect GitHub in Heroku (Deploy tab) or push via terminal, Run migrations after deploy: heroku run python manage.py migrate
+- Create a superuser.
+- heroku run python manage.py createsuperuser
 
 ## Credits
 
